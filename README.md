@@ -1,11 +1,11 @@
-![Github Workflows](https://github.com/DeltaNedas/ExampleJavaMod/workflows/Java%20CI/badge.svg)
+![Github Workflows](https://github.com/DeltaNedas/AnukeMod/workflows/Java%20CI/badge.svg)
 
-# ExampleJavaMod
+# AnukeMod
 
 A prototype Java Mindustry mod that works on Android and PC.
 Uses a small makefile rather than gradle.
 
-Download a precompiled build [here](https://github.com/DeltaNedas/ExampleJavaMod/releases/latest)
+Download a precompiled build [here](https://github.com/DeltaNedas/AnukeMod/releases/latest)
 
 ## Building for Desktop Testing
 

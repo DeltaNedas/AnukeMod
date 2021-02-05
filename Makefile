@@ -42,26 +42,26 @@ endef
 $(eval $(call newlib,core-release,Anuken/Mindustry,core,$(version)))
 $(eval $(call newlib,arc-core,Anuken/Arc,arc-core,$(version)))
 
-build: ExampleJavaMod-Desktop.jar
-android: build ExampleJavaMod.jar
+build: AnukeMod-Desktop.jar
+android: build AnukeMod.jar
 
 build/classes/%.class: src/%.java $(libs)
 	@printf "\033[32m> JAVAC\033[0m\t%s\n" $@
 	@mkdir -p `dirname $@`
 	$(JAVAC) $(JAVACFLAGS) $< -d build/classes
 
-ExampleJavaMod-Desktop.jar: $(classes) $(assets)
+AnukeMod-Desktop.jar: $(classes) $(assets)
 	@printf "\033[33m> JAR\033[0m\t%s\n" $@
 	jar -cf $@ $(JARFLAGS) || rm $@
 
-ExampleJavaMod.jar: ExampleJavaMod-Desktop.jar
+AnukeMod.jar: AnukeMod-Desktop.jar
 	@printf "\033[33m> D8\033[0m\t%s\n" $@
 	$(D8) $(D8FLAGS) --output build $^
-	cp ExampleJavaMod-Desktop.jar $@
+	cp AnukeMod-Desktop.jar $@
 	cd build; zip -qg ../$@ classes.dex
 
 install: build
-	cp ExampleJavaMod-Desktop.jar $(MINDUSTRY)/mods
+	cp AnukeMod-Desktop.jar $(MINDUSTRY)/mods
 
 clean:
 	rm -rf build
@@ -72,9 +72,9 @@ reset:
 help:
 	@printf "\033[97;1mAvailable tasks:\033[0m\n"
 	@printf "\t\033[32mbuild \033[90m(default)\033[0m\n"
-	@printf "\t  Compile the mod into \033[97;1m%s\033[0m\n" ExampleJavaMod-Desktop.jar
+	@printf "\t  Compile the mod into \033[97;1m%s\033[0m\n" AnukeMod-Desktop.jar
 	@printf "\t\033[32mandroid\033[0m\n"
-	@printf "\t  Dex the mod into \033[91;1m%s\033[0m\n" ExampleJavaMod.jar
+	@printf "\t  Dex the mod into \033[91;1m%s\033[0m\n" AnukeMod.jar
 	@printf "\t  Compatible with PC and Android.\n"
 	@printf "\t\033[32minstall\033[0m\n"
 	@printf "\t  Install the desktop version to \033[97;1m%s\033[0m\n" $(MINDUSTRY)

@@ -1,9 +1,9 @@
 {
-	"name": "example-java-mod",
-	"displayName": "Example Java Mod",
+	"name": "anuke-mod",
+	"displayName": "Anuke Mod",
 	"author": "DeltaNedas",
-	"main": "example.ExampleJavaMod",
-	"description": "A jar mod. Glory to the cat",
-	"version": "1.0.3",
+	"main": "anuke.AnukeMod",
+	"description": "anuke",
+	"version": "1.0.0",
 	"minGameVersion": 105
 }

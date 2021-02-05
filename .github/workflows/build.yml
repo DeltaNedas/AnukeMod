@@ -26,12 +26,12 @@ jobs:
       uses: actions/upload-artifact@v2
       with:
         name: Desktop-only build
-        path: ExampleJavaMod-Desktop.jar
+        path: AnukeMod-Desktop.jar
     - name: Upload universal jar
       uses: actions/upload-artifact@v2
       with:
         name: Android + Desktop build
-        path: ExampleJavaMod.jar
+        path: AnukeMod.jar
     - name: Create release
       uses: actions/create-release@v1
       id: create_release
@@ -48,6 +48,6 @@ jobs:
         GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
       with:
         upload_url: ${{ steps.create_release.outputs.upload_url }}
-        asset_path: ExampleJavaMod.jar
-        asset_name: ExampleJavaMod.jar
+        asset_path: AnukeMod.jar
+        asset_name: AnukeMod.jar
         asset_content_type: application/zip
